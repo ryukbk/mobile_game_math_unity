@@ -1,6 +1,8 @@
 ﻿# ゲームアプリの数学 サンプルコード
 
-本gitレポジトリーは『[ゲームアプリの数学 Unityで学ぶ基礎からシェーダーまで](http://amzn.to/1UR7vmm) 』(久富木 隆一 著/SBクリエイティブ 刊)のためのサンプルコードを保持します。上記書籍は本サンプルコードの注釈を含みます。
+本gitレポジトリーは『[ゲームアプリの数学 Unityで学ぶ基礎からシェーダーまで](http://amzn.to/1UR7vmm) 』(久富木 隆一 著/SBクリエイティブ 刊)のためのサンプルコードならびに著者により更新されるサポート情報を保持します。
+
+上記書籍は本サンプルコードへの必要十分な注釈を含んでいますので、上記書籍を手元に置いて参照しながら、Unityで本サンプルコードを動かしたり改変したりしながら動作結果を視覚的に確認して下さい。
 
 ## 動作環境
 
@@ -19,9 +21,9 @@
 
 以下のいずれかの方法でサンプルコードを取得してください。
 
-* 本レポジトリーの"Download ZIP"から一括ダウンロード
-* gitクライアントでローカルPCへclone
-* githubアカウント所持者であれば自己レポジトリーへfork
+* 本レポジトリーのメニュー内の"Download ZIP"ボタンから一括ダウンロード
+* gitクライアントでローカルPCへ本レポジトリーをclone
+* githubアカウント所持者であれば、本レポジトリーを自己レポジトリーへfork
 
 ## ファイル構成
 
@@ -39,13 +41,18 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 補遺
 
-* 書籍内では代表的なDCCツールとしてAutodesk Mayaを挙げていますが、他に、無料でオープンソースの3Dモデリングツールとして[Blender](https://www.blender.org/)が有名です。
-* サンプルコードのChapter09シーンでは、以下2点の仕様を追加
-	- シーン再生時に光源を回転
-	- [有名な3Dモデル](https://en.wikipedia.org/wiki/List_of_common_3D_test_models)である[Utar teapot](https://ja.wikipedia.org/wiki/Utah_teapot)と、スタンフォード大学の[Happy Buddha](http://graphics.stanford.edu/data/3Dscanrep/)を、Blenderを用い、いずれも以下改変を適用して[Wavefront objフォーマット](https://en.wikipedia.org/wiki/Wavefront_.obj_file)でエクスポートし、Unityでインポートしてシーン内に配置
-		- オリジナルのマテリアルを削除
-		- サブメッシュをjoin
-		- メッシュ内の三角形の数が16ビットで表現できない数値(65535)以上であるとUnityでのインポート時にサブメッシュに分割されるため、Decimate ModifierでFace Countを65534以下に削減
+* 前書き
+	- 代表的なDCCツールとしてAutodesk Mayaを挙げていますが、他に、無料でオープンソースの3Dモデリングツールとして[Blender](https://www.blender.org/)が有名です。
+* 第8章
+	- TBDRのメリット/デメリットについては、同じ章で後に存在するグラフィックスパイプライン解説の読後に再度読んでみてください。
+	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っており、Gバッファーの作成までがpass 1、Gバッファーを用いた(pass 1で行わずに次のpassまで遅延された)照明計算がpass 2です。
+* 第9章
+	- サンプルコードのChapter09シーンに以下2点の仕様を追加
+		1. シーン再生時に光源を回転
+		1. [有名な3Dモデル](https://en.wikipedia.org/wiki/List_of_common_3D_test_models)である、[Utar teapot](https://ja.wikipedia.org/wiki/Utah_teapot)と、スタンフォード大学の[Happy Buddha](http://graphics.stanford.edu/data/3Dscanrep/)を、Blenderにインポートし、以下改変を適用して[Wavefront objフォーマット](https://en.wikipedia.org/wiki/Wavefront_.obj_file)でエクスポートして、Unityのシーン内に配置
+			- オリジナルのマテリアルを削除
+			- サブメッシュをjoin
+			- メッシュ内の三角形の数が16ビットで表現できない数値(65535)以上であるとUnityでのインポート時にサブメッシュに分割されるため、Decimate ModifierでFace Countを65534以下に削減
 
 ## FAQ
 
@@ -66,6 +73,7 @@ SBクリエイティブ社[サポートページ正誤情報](http://www.sbcr.jp
 
 ## 更新履歴
 
+* 2015-09-22 補遺追加
 * 2015-09-19 初版
 
 
