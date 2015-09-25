@@ -2,7 +2,9 @@
 
 本gitレポジトリーは『[ゲームアプリの数学 Unityで学ぶ基礎からシェーダーまで](http://amzn.to/1UR7vmm) 』(久富木 隆一 著/SBクリエイティブ 刊)のためのサンプルコードならびに著者により更新されるサポート情報を保持します。
 
-上記書籍は本サンプルコードへの必要十分な注釈を含んでいますので、上記書籍を手元に置いて参照しながら、Unityで本サンプルコードを動かしたり改変したりしながら動作結果を視覚的に確認して下さい。
+上記書籍は、本サンプルコードへの必要十分な注釈を含んでいます。書籍を手元に置いて参照しつつ、Unityで本サンプルコードを動かしたり、あるいは自由に改変したりして、動作結果を視覚的に確認することにより、書籍の内容を直感的に理解し応用につなげることができます。
+
+本ページと合わせ、正誤表他の情報が記載されたSBクリエイティブ社[サポートページ](http://www.sbcr.jp/products/4797384260.html)も参照ください。
 
 ## 動作環境
 
@@ -39,17 +41,22 @@
 
 Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シーン再生ボタンを押下してください。
 
+## 正誤表
+
+書籍出版後に判明した本文中の誤記とその訂正は、SBクリエイティブ社[サポートページ正誤情報](http://www.sbcr.jp/support/12645.html)に掲載しておりますので、お問い合わせ前にご確認ください。
+
 ## 補遺
 
 * 前書き
 	- 代表的なDCCツールとしてAutodesk Mayaを挙げていますが、他に、無料でオープンソースの3Dモデリングツールとして[Blender](https://www.blender.org/)が有名です。
 * 第8章
 	- TBDRのメリット/デメリットについては、同じ章で後に存在するグラフィックスパイプライン解説の読後に再度読んでみてください。
-	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っており、Gバッファーの作成までがpass 1、Gバッファーを用いた(pass 1で行わずに次のpassまで遅延された)照明計算がpass 2です。
+	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っており、Gバッファーの作成までがpass 1、Gバッファーを用いて行われる(pass 1ではあえて行わずに次のpassまで遅延された)照明計算がpass 2です。
 * 第9章
+	- 4次元ベクトルを表す型vec4はx、y、z、wの4つのメンバー変数を持つ構造体であり、packednormalはビットマップの1ピクセルを表すvec4で、RGBA各チャンネルを各メンバー変数に格納しています。つまりpackednormal.wにA(アルファ)が、packednormal.yにG(緑)が入っているので、スウィズル演算子wyを使い、wとyをvec2として抜き出して展開します。
 	- サンプルコードのChapter09シーンに以下2点の仕様を追加
 		1. シーン再生時に光源を回転
-		1. [有名な3Dモデル](https://en.wikipedia.org/wiki/List_of_common_3D_test_models)である、[Utar teapot](https://ja.wikipedia.org/wiki/Utah_teapot)と、スタンフォード大学の[Happy Buddha](http://graphics.stanford.edu/data/3Dscanrep/)を、Blenderにインポートし、以下改変を適用して[Wavefront objフォーマット](https://en.wikipedia.org/wiki/Wavefront_.obj_file)でエクスポートして、Unityのシーン内に配置
+		1. [有名な3Dモデル](https://en.wikipedia.org/wiki/List_of_common_3D_test_models)である、[Utar teapot](https://ja.wikipedia.org/wiki/Utah_teapot)と、スタンフォード大学の[Happy Buddha](http://graphics.stanford.edu/data/3Dscanrep/)を、Blenderにインポート。Blender上で以下改変を適用して[Wavefront objフォーマット](https://en.wikipedia.org/wiki/Wavefront_.obj_file)でエクスポートし、Unityのシーン内に配置
 			- オリジナルのマテリアルを削除
 			- サブメッシュをjoin
 			- メッシュ内の三角形の数が16ビットで表現できない数値(65535)以上であるとUnityでのインポート時にサブメッシュに分割されるため、Decimate ModifierでFace Countを65534以下に削減
@@ -57,10 +64,6 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 ## FAQ
 
 * 随時更新
-
-## 正誤表
-
-SBクリエイティブ社[サポートページ正誤情報](http://www.sbcr.jp/products/4797384260.html)を参照ください。
 
 ## ライセンス
 
@@ -73,6 +76,7 @@ SBクリエイティブ社[サポートページ正誤情報](http://www.sbcr.jp
 
 ## 更新履歴
 
+* 2015-09-26 補遺追加
 * 2015-09-22 補遺追加
 * 2015-09-19 初版
 
