@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SceneLoader : MonoBehaviour {
@@ -23,7 +24,7 @@ public class SceneLoader : MonoBehaviour {
 	}
 
 	IEnumerator DoLoad(string name) {
-		AsyncOperation async = Application.LoadLevelAsync(name);
+		AsyncOperation async = SceneManager.LoadSceneAsync(name);
 		yield return async;
 	}
 }

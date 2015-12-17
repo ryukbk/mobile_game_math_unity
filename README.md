@@ -8,7 +8,8 @@
 
 ## 動作環境
 
-* **Unity 5.2.4 f1** 以降
+* **Unity 5.3.0 f4** 以降
+	- Unity 5.2.xでサンプルを実行したい場合は[Unity_5.2ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.2)を取得してください。
 	- Microsoft Windows 7 以降
 	- Mac OS X 10.10 以降
 * Unityは、Unity Technologies社のwebサイトから無料のPersonal Editionを選択してダウンロードし、インストールしてください。
@@ -19,7 +20,7 @@
 
 ## ダウンロード
 
-最新のサンプルコードは本レポジトリーのmasterブランチに収録されています。
+最新のサンプルコードは本gitレポジトリーのmasterブランチに収録されています。
 
 以下のいずれかの方法でサンプルコードを取得してください。
 
@@ -67,6 +68,15 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 * 随時更新
 
+## 著者講演資料
+
+* [ゲームアプリの数学@Unity Rendering Wizardの集い](http://www.slideshare.net/ryukbk/unity-rendering-wizard)
+	- 2015年10月22日渋谷dots.で開催された[Unity Rendering Wizardの集い](http://eventdots.jp/event/571325)でのLT資料です。 
+* [ゲームアプリの数学@プログラマのための数学勉強会](http://www.slideshare.net/ryukbk/ss-55366793)
+	- 2015年11月21日渋谷dots.で開催された[第5回 プログラマのための数学勉強会](http://eventdots.jp/event/571642) [#maths4pg](https://twitter.com/hashtag/maths4pg?src=hash)でのLT資料です。
+* [ゲームアプリの数学@GREE GameDevelopers' Meetup](http://www.slideshare.net/ryukbk/gree-gamedevelopers-meetup)
+	- 2015年12月16日六本木ヒルズのグリー株式会社で開催された[GREE GameDevelopers' Meetup 02](http://greegdm02.peatix.com/) [#greegdm02](https://twitter.com/hashtag/greegdm02?src=hash)での講演資料です。書籍『ゲームアプリの数学 Unityで学ぶ基礎からシェーダーまで』の紹介、番外編(レイトレーシング/レイマーチング/SDFなど、ラスタライズを行わない非ポリゴンベースの3Dグラフィックスの紹介)、ゲーム開発の未来展望(手続き生成、機械学習/ディープラーニング、モバイルVRなど)から成ります。
+
 ## ライセンス
 
 本サンプルコードは[CC BY-SA/Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)でライセンスされています。
@@ -78,7 +88,9 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 更新履歴
 
-* 2015-12-18 Unity 5.2.4f1
+* 2015-12-18 著者講演資料追加
+* 2015-12-18 Unity 5.3サポート(Unity 5.3.0f4)
+* 2015-12-18 Unity 5.2向けブランチ追加(Unity_5.2)(Unity 5.2.4f1)
 * 2015-09-29 補遺追加
 * 2015-09-26 補遺追加
 * 2015-09-22 補遺追加

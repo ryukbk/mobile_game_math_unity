@@ -12,8 +12,11 @@
 /Library/AssetImportState
 /Library/AssetVersioning.db
 
+/obj
+
 *.csproj
 *.sln
+*.suo
 
 /*.userprefs
 
