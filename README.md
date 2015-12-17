@@ -8,7 +8,7 @@
 
 ## 動作環境
 
-* **Unity 5.2.0 f3** 以降
+* **Unity 5.2.4 f1** 以降
 	- Microsoft Windows 7 以降
 	- Mac OS X 10.10 以降
 * Unityは、Unity Technologies社のwebサイトから無料のPersonal Editionを選択してダウンロードし、インストールしてください。
@@ -78,6 +78,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 更新履歴
 
+* 2015-12-18 Unity 5.2.4f1
 * 2015-09-29 補遺追加
 * 2015-09-26 補遺追加
 * 2015-09-22 補遺追加
