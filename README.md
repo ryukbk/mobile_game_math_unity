@@ -65,6 +65,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 			- サブメッシュをjoin
 			- メッシュ内の三角形の数が16ビットで表現できない数値(65535)以上であるとUnityでのインポート時にサブメッシュに分割されるため、Decimate ModifierでFace Countを65534以下に削減
 	- Unity 5.3.5以降では、シェーダープログラム内でのモデル変換行列`_Object2World`の定義が、UnityCG.glslinc内では廃止されていますので、シェーダープログラムを書く際には、代わりに新しく定義された`unity_ObjectToWorld`を使用して下さい。(本レポジトリー内でのサンプルコードでは、`_Object2World`が定義されていない場合は`unity_ObjectToWorld`を用い`_Object2World`を別名として定義するようにしています。)
+	- Unity 5.5では、MacでのグラフィックスAPIとしてはPlayer Settingsでの設定ではOpenGLCoreのみ選択できOpenGL2が廃止されています。従って、Mac向けにGLSLシェーダープログラムを動作させるためにはOpenGLCoreがサポートするGLSL 1.30に従って書く必要があります。GLSL 1.30では`varying`変数は廃止されており、代わりに、バーテックスシェーダーで出力する変数は`out`指定してバーテックスシェーダー内に定義し、同名の変数を`in`指定してフラグメントシェーダー内に定義しフラグメントシェーダーへの入力とします。
 
 ## FAQ
 
@@ -90,7 +91,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 更新履歴
 
-* 2017-01-07 Unity 5.5/5.4サポート(Unity 5.5.0f3)、_Object2Worldについて補遺追加
+* 2017-01-07 Unity 5.5/5.4サポート(Unity 5.5.0f3)、_Object2World、varyingについて補遺追加
 * 2015-12-18 著者講演資料追加
 * 2015-12-18 Unity 5.3サポート(Unity 5.3.0f4)
 * 2015-12-18 Unity 5.2向けブランチ追加(Unity_5.2)(Unity 5.2.4f1)

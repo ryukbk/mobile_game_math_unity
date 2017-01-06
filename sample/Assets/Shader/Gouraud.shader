@@ -19,11 +19,11 @@
 	        uniform vec4 _Color;
 	        uniform vec4 _SpecularColor;
 	        uniform float _SpecularExponent;
-	        
-	        varying vec4 color;
 
 	        #ifdef VERTEX
-	        void main() {	            
+			out vec4 color;
+
+	        void main() {
 	            vec3 ambientLight = gl_LightModel.ambient.xyz * vec3(_Color);
 
 	            vec3 surfaceNormal = normalize((_Object2World * vec4(gl_Normal, 0.0)).xyz);
@@ -40,6 +40,8 @@
 	        #endif
 
 	        #ifdef FRAGMENT
+	        in vec4 color;
+
 	        void main() {
 	           gl_FragColor = color;
 	        }

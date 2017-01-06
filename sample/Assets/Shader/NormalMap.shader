@@ -24,11 +24,10 @@
 	        uniform sampler2D _NormalMap;
 			uniform vec4 _NormalMap_ST;
 
-	        varying vec4 normalMapCoord;
-	        varying vec4 glVertexWorld;
-	        varying mat3 tbn;
-
 	        #ifdef VERTEX
+	        out vec4 normalMapCoord;
+	        out vec4 glVertexWorld;
+	        out mat3 tbn;
 	        
 	        attribute vec4 Tangent;
 	        
@@ -47,6 +46,10 @@
 	        #endif
 
 	        #ifdef FRAGMENT
+	        in vec4 normalMapCoord;
+	        in vec4 glVertexWorld;
+	        in mat3 tbn;
+
 	        vec3 unpackNormalDXT5nm(vec4 packednormal) {
 				vec3 normal;
 				normal.xy = packednormal.wy * 2.0 - 1.0;

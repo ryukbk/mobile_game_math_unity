@@ -15,9 +15,10 @@
 	        uniform vec4 _LightColor0;
 
 	        uniform vec4 _Color;
-	        varying vec4 color;
 	         
 	        #ifdef VERTEX
+	        out vec4 color;
+
 	        void main() {	            
 	            vec3 surfaceNormal = normalize(vec3(_Object2World * vec4(gl_Normal, 0.0)));
 	            vec3 lightDirectionNormal = normalize(vec3(_WorldSpaceLightPos0));
@@ -29,6 +30,8 @@
 	        #endif
 
 	        #ifdef FRAGMENT
+	        in vec4 color;
+
 	        void main() {
 	           gl_FragColor = color;
 	        }
