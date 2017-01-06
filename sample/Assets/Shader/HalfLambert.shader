@@ -8,6 +8,10 @@
 			
 			GLSLPROGRAM
 	        #include "UnityCG.glslinc"
+	        #if !defined _Object2World
+	        #define _Object2World unity_ObjectToWorld
+	        #endif
+
 	        uniform vec4 _LightColor0;
 
 	        uniform vec4 _Color;
