@@ -8,8 +8,9 @@
 
 ## 動作環境
 
-* **Unity 5.3.0 f4** 以降
-	- Unity 5.2.xでサンプルを実行したい場合は[Unity_5.2ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.2)を取得してください。
+* **Unity 5.5.0 f3** 以降
+	- Unity 5.3.4以前でサンプルを実行したい場合は[Unity_5.3.4ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.3.4)を取得して下さい。
+	- Unity 5.2.x以前でサンプルを実行したい場合は[Unity_5.2ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.2)を取得してください。
 	- Microsoft Windows 7 以降
 	- Mac OS X 10.10 以降
 * Unityは、Unity Technologies社のwebサイトから無料のPersonal Editionを選択してダウンロードし、インストールしてください。
@@ -51,18 +52,19 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 * 前書き
 	- 代表的なDCCツールとしてAutodesk Mayaを挙げていますが、他に、無料でオープンソースの3Dモデリングツールとして[Blender](https://www.blender.org/)が有名です。
 * 第6章
-	- 単位クォータニオンの逆数を与えて回転すると、元のクォータニオンによる回転の逆回転となります。サンプルコード中のQuaternion.Inverseは、引数として与えた単位クォータニオンの逆数を返します。
+	- 単位クォータニオンの逆数を与えて回転すると、元のクォータニオンによる回転の逆回転となります。サンプルコード中の`Quaternion.Inverse`は、引数として与えた単位クォータニオンの逆数を返します。
 * 第8章
 	- TBDRのメリット/デメリットについては、同じ章で後に存在するグラフィックスパイプライン解説の読後に再度読んでみてください。
-	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っており、Gバッファーの作成までがpass 1、Gバッファーを用いて行われる(pass 1ではあえて行わずに次のpassまで遅延された)照明計算がpass 2です。
+	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っています。Gバッファーの作成までがpass 1、Gバッファーを用いて行われる(pass 1ではあえて行わずに次のpassまで遅延された)照明計算がpass 2です。
 * 第9章
-	- 4次元ベクトルを表す型vec4はx、y、z、wの4つのメンバー変数を持つ構造体であり、packednormalはビットマップの1ピクセルを表すvec4で、RGBA各チャンネルを各メンバー変数に格納しています。つまりpackednormal.wにA(アルファ)が、packednormal.yにG(緑)が入っているので、スウィズル演算子wyを使い、wとyをvec2として抜き出して展開します。
+	- 4次元ベクトルを表す型`vec4`は`x`、`y`、`z`、`w`の4つのメンバー変数を持つ構造体であり、`packednormal`はビットマップの1ピクセルを表す`vec4`で、RGBA各チャンネルを各メンバー変数に格納しています。つまり`packednormal.w`にA(アルファ)が、`packednormal.y`にG(緑)が入っているので、スウィズル演算子`wy`を使い、`w`と`y`を`vec2`として抜き出して展開します。
 	- サンプルコードのChapter09シーンに以下2点の仕様を追加
 		1. シーン再生時に光源を回転
 		1. [有名な3Dモデル](https://en.wikipedia.org/wiki/List_of_common_3D_test_models)である、[Utar teapot](https://ja.wikipedia.org/wiki/Utah_teapot)と、スタンフォード大学の[Happy Buddha](http://graphics.stanford.edu/data/3Dscanrep/)を、Blenderにインポート。Blender上で以下改変を適用して[Wavefront objフォーマット](https://en.wikipedia.org/wiki/Wavefront_.obj_file)でエクスポートし、Unityのシーン内に配置
 			- オリジナルのマテリアルを削除
 			- サブメッシュをjoin
 			- メッシュ内の三角形の数が16ビットで表現できない数値(65535)以上であるとUnityでのインポート時にサブメッシュに分割されるため、Decimate ModifierでFace Countを65534以下に削減
+	- Unity 5.3.5以降では、シェーダープログラム内でのモデル変換行列`_Object2World`の定義が、UnityCG.glslinc内では廃止されていますので、シェーダープログラムを書く際には、代わりに新しく定義された`unity_ObjectToWorld`を使用して下さい。(本レポジトリー内でのサンプルコードでは、`_Object2World`が定義されていない場合は`unity_ObjectToWorld`を用い`_Object2World`を別名として定義するようにしています。)
 
 ## FAQ
 
@@ -88,6 +90,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 更新履歴
 
+* 2017-01-07 Unity 5.5/5.4サポート(Unity 5.5.0f3)、_Object2Worldについて補遺追加
 * 2015-12-18 著者講演資料追加
 * 2015-12-18 Unity 5.3サポート(Unity 5.3.0f4)
 * 2015-12-18 Unity 5.2向けブランチ追加(Unity_5.2)(Unity 5.2.4f1)
