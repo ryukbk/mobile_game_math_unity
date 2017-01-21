@@ -132,7 +132,6 @@ public class Chapter05Editor : Editor {
 			Debug.Log(graphicsDeviceType);
 
 			bool dx = graphicsDeviceType.IndexOf("Direct3D") == 0;
-			bool dx11 = false;
 
 			int dxVersion = 11;
 			if (dx) {
