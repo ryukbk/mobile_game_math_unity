@@ -128,22 +128,48 @@ public class Chapter05Editor : Editor {
 		projectionMatrix.SetRow(3, RowVector4Field(projectionMatrix.GetRow(3)));
 
 		if ( GUILayout.Button("Camera.main.projectionMatrix" ) ) {
-			bool dx = SystemInfo.graphicsDeviceType.ToString().IndexOf("Direct3D") > -1;
-			Debug.Log(SystemInfo.graphicsDeviceType.ToString());
+			string graphicsDeviceType = SystemInfo.graphicsDeviceType.ToString();
+			Debug.Log(graphicsDeviceType);
+
+			bool dx = graphicsDeviceType.IndexOf("Direct3D") == 0;
+			bool dx11 = false;
+
+			int dxVersion = 11;
+			if (dx) {
+				System.Int32.TryParse(graphicsDeviceType.Substring("Direct3D".Length), out dxVersion);
+				Debug.Log("Direct3D version: " + dxVersion);
+			}
 
 			Matrix4x4 pm = Camera.main.projectionMatrix;
 
 			if (dx) {
-				for (int i = 0; i < 4; i++) {
-					pm[1, i] = -pm[1, i];
-				}
+				if (dxVersion < 11) {
+					for (int i = 0; i < 4; i++) {
+						pm [1, i] = -pm [1, i];
+					}
 
-				for (int i = 0; i < 4; i++) {
-					pm[2, i] = pm[2, i] * 0.5f + pm[3, i] * 0.5f;
+					for (int i = 0; i < 4; i++) {
+						pm [2, i] = pm [2, i] * 0.5f + pm [3, i] * 0.5f;
+					}
+				} else {
+					for (int i = 0; i < 4; i++) {
+						pm[1, i] = -pm[1, i];
+					}
+
+					for (int i = 0; i < 4; i++) {
+						pm[2, i] = pm[2, i] * -0.5f + pm[3, i] * 0.5f;
+					}
 				}
 			}
 
 			projectionMatrix = pm;
+
+			Matrix4x4 gpuProjectionMatrix = GL.GetGPUProjectionMatrix(Camera.main.projectionMatrix, true);
+			if (pm == gpuProjectionMatrix) {
+				Debug.Log("Camera.main.projectionMatrix matches with GL.GetGPUProjectionMatrix");
+			} else {
+				Debug.LogWarning("Camera.main.projectionMatrix doesn't match with GL.GetGPUProjectionMatrix");
+			}
 		}
 
 		if ( GUILayout.Button("GL.GetGPUProjectionMatrix" ) ) {

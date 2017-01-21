@@ -51,8 +51,21 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 * 前書き
 	- 代表的なDCCツールとしてAutodesk Mayaを挙げていますが、他に、無料でオープンソースの3Dモデリングツールとして[Blender](https://www.blender.org/)が有名です。
+* 第5章
+	- サンプルコードのプロジェクトでは、Unity EditorメニューのFile | Build Settings | Player Settings | Graphics API for Windowsの設定は、デフォルトではOpenGL系レンダラーであるOpenGLES3が最上位で最優先と設定されているため、Windows上でもOpenGL系のプロジェクション変換行列となります。Direct3D9レンダラーを最上位に設定すると、本文133ページのプロジェクション変換行列となります。
+	- Unity 5.5からの[変更点(Shaders: Z-buffer float inverted)](https://docs.unity3d.com/550/Documentation/Manual/UpgradeGuide55.html)として、Graphics API for Windows設定でDirect3D11レンダラーを最上位に設定した場合、従来のDirect3D9レンダラーと異なり、プロジェクション変換行列Pのz軸範囲が[1, 0]に写像されるようになります。これに伴い、本文133ページのWindows上でのプロジェクション変換行列の3行3列は![](https://latex.codecogs.com/gif.download?%7B%5Cfrac%7Bn%7D%7Bf-n%7D%7D)、3行4列は![](https://latex.codecogs.com/gif.download?%7B%5Cfrac%7Bfn%7D%7Bf-n%7D%7D)となります。同様に、144ページでのDirect3D向けのz軸範囲の写像しなおしも、最新サンプルコードはDirect3D11レンダラー上では[1, 0]になるよう処理を行います。
+
+	```
+	for (int i = 0; i < 4; i++) {
+	    pm[2, i] = pm[2, i] * -0.5f + pm[3, i] * 0.5f;
+	}
+	```
+	
+	Unity 5.5でのDirect3D11レンダラーの変更は、本文234ページで触れているデプス(深度)バッファー/Zバッファーの精度を、(Direct3D 9では利用できなかった)浮動小数点精度を用いて向上させるとともに、[reverse-Z](https://developer.nvidia.com/content/depth-precision-visualized)として知られる[1, 0]への写像により遠景部分で精度を向上させるものです。精度向上のためのテクニックとして、他に[対数デプスバッファー(Logarithmic Depth Buffers)](http://qpp.bitbucket.org/translation/maximizing_depth_buffer_range_and/)があります。
 * 第6章
 	- 単位クォータニオンの逆数を与えて回転すると、元のクォータニオンによる回転の逆回転となります。サンプルコード中の`Quaternion.Inverse`は、引数として与えた単位クォータニオンの逆数を返します。
+* 第7章
+	- 本文181ページの曲線当てはめは、本文168ページで紹介しているスケルタルアニメーションを実現するために、キーフレームアニメーションの元データを[Catmull-Romスプラインのような曲線で近似することによりデータ量を圧縮する](https://engineering.riotgames.com/news/compressing-skeletal-animation-data)のに利用されることがあります。
 * 第8章
 	- TBDRのメリット/デメリットについては、同じ章で後に存在するグラフィックスパイプライン解説の読後に再度読んでみてください。
 	- 遅延シェーディングは、第9章で触れているマルチパスレンダリングを行っています。Gバッファーの作成までがpass 1、Gバッファーを用いて行われる(pass 1ではあえて行わずに次のpassまで遅延された)照明計算がpass 2です。
@@ -91,6 +104,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 更新履歴
 
+* 2017-01-22 第5章サンプルコードDirect3D11向け修正。第5章、第7章補遺追加
 * 2017-01-07 Unity 5.5/5.4サポート(Unity 5.5.0f3)、_Object2World、varyingについて補遺追加
 * 2015-12-18 著者講演資料追加
 * 2015-12-18 Unity 5.3サポート(Unity 5.3.0f4)
