@@ -77,9 +77,13 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 * [ゲームアプリの数学@GREE GameDevelopers' Meetup](http://www.slideshare.net/ryukbk/gree-gamedevelopers-meetup)
 	- 2015年12月16日六本木ヒルズのグリー株式会社で開催された[GREE GameDevelopers' Meetup 02](http://greegdm02.peatix.com/) [#greegdm02](https://twitter.com/hashtag/greegdm02?src=hash)での講演資料です。書籍『ゲームアプリの数学 Unityで学ぶ基礎からシェーダーまで』の紹介、番外編(レイトレーシング/レイマーチング/SDFなど、ラスタライズを行わない非ポリゴンベースの3Dグラフィックスの紹介)、ゲーム開発の未来展望(手続き生成、機械学習/ディープラーニング、モバイルVRなど)から成ります。
 
-## ライセンス
+## 著作権表示/ライセンス
 
-本サンプルコードは[CC BY-SA/Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)でライセンスされています。
+(C) 2015 Ryuichi KUBUKI (久富木 隆一)
+
+本サンプルコードは[CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ja)でライセンスされています。
+
+The contents of this repository are licensed under [CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 
 ## 著者連絡先
 
