@@ -1,5 +1,5 @@
 (C) 2015 Ryuichi KUBUKI
 
-The contents of this repository are licensed under CC BY-SA/Creative Commons Attribution Share Alike 4.0
-https://creativecommons.org/licenses/by-sa/4.0/legalcode
+The contents of this repository are licensed under [CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
 

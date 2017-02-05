@@ -110,9 +110,9 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 (C) 2015 Ryuichi KUBUKI (久富木 隆一)
 
-本サンプルコードは[CC BY-SA/Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)でライセンスされています。
+本サンプルコードは[CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ja)でライセンスされています。
 
-The contents of this repository are licensed under [CC BY-SA/Creative Commons Attribution Share Alike 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+The contents of this repository are licensed under [CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 
 ## 著者連絡先
 
