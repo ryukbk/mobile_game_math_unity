@@ -8,6 +8,7 @@
 
 ## 更新履歴
 
+* 2018-02-12 Unity 2017.3サポート(Unity 2017.3.1f1)
 * 2017-01-22 第5章サンプルコードDirect3D11向け修正。第5章、第7章補遺追加
 * 2017-01-07 Unity 5.5/5.4サポート(Unity 5.5.0f3)、_Object2World、varyingについて補遺追加
 * 2015-12-18 著者講演資料追加
@@ -20,7 +21,8 @@
 
 ## 動作環境
 
-* **Unity 5.5.0 f3** 以降
+* **Unity 5.6.0** 以降
+	- Unity 5.5.x以前でサンプルを実行したい場合は[Unity_5.5ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.5)を取得して下さい。
 	- Unity 5.3.4以前でサンプルを実行したい場合は[Unity_5.3.4ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.3.4)を取得して下さい。
 	- Unity 5.2.x以前でサンプルを実行したい場合は[Unity_5.2ブランチ](https://github.com/ryukbk/mobile_game_math_unity/tree/Unity_5.2)を取得してください。
 	- Microsoft Windows 7 以降
@@ -108,7 +110,7 @@ Unityで、Unityプロジェクトとしてsampleフォルダーを開き、シ�
 
 ## 著作権表示/ライセンス
 
-(C) 2015 Ryuichi KUBUKI (久富木 隆一)
+(C) 2015-2018 Ryuichi KUBUKI (久富木 隆一)
 
 本サンプルコードは[CC BY-NC-SA/Creative Commons Attribution Non-Commercial Share-Alike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ja)でライセンスされています。
 

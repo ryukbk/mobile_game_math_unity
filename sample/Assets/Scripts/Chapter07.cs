@@ -158,7 +158,7 @@ public class Chapter07 : MonoBehaviour {
 		lineRenderer.endColor = color;
 		lineRenderer.startWidth = width;
 		lineRenderer.endWidth = width;
-		lineRenderer.numPositions = numberOfPoints * (controlPoints.Length - vertexCountDiff);
+		lineRenderer.positionCount = numberOfPoints * (controlPoints.Length - vertexCountDiff);
 
 		for (int j = 0; j < controlPoints.Length - vertexCountDiff; j++) {
 			if (!CheckBoundary(j)) {
